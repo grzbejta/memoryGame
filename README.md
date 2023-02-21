@@ -10,4 +10,4 @@ Prosta gra memory
 
 ## Demo
 
-Insert gif or link to demo
+https://grzbejta.github.io/memoryGame/

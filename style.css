@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif, serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #424245;
+}
+
+.result {
+  position: relative;
+  padding-top: 20px;
+  width: 600px;
+  border-radius: 10px 10px 0 0;
+  background-color: #e6e6e6;
+}
+
+.result h2 {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: uppercase;
+}
+
+.reset {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.wrappen {
+  height: 600px;
+  width: 600px;
+  padding: 25px;
+  background-color: #e6e6e6;
+  border-radius: 0 0 10px 10px;
+}
+
+.cards,
+.card,
+.result,
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  height: calc(100% / 6 - 10px);
+  width: calc(100% / 6 - 10px);
+}
+
+.card.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.card .back-view {
+  transform: rotateY(180deg);
+}
+
+.card.flip .back-view {
+  transform: rotateY(0deg);
+}
+
+.card.flip .front-view {
+  transform: rotateY(180deg);
+}
+
+.view {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  background-color: #f5f5f5;
+  border-radius: 7px;
+  backface-visibility: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s linear;
+}
+
+img {
+  max-width: 45px;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-13px, 13px);
+  }
+  40% {
+    transform: translate(-10px, -10px);
+  }
+  60% {
+    transform: translate(8px, 8px);
+  }
+  80% {
+    transform: translate(4px, -4px);
+  }
+}
